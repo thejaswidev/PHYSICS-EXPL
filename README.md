@@ -1,6 +1,8 @@
 # PHYSICS-EXPL
 PHYSICS EXP LEARNING
  
+ @manish..
+ 
 Refer code in pitches.ino to know how the add play sound on speaker
 
 Only one pitch is required (maybe C3 ??)
