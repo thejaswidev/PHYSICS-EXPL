@@ -1,6 +1,6 @@
 #include"pitches.h"
 
-// notes in the song 'Mukkathe Penne'
+// some song has been used
 int melody[] = {
 NOTE_DS3,NOTE_DS3,NOTE_AS3,NOTE_G3,NOTE_F3, 0,
 
