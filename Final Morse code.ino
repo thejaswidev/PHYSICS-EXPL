@@ -1,42 +1,15 @@
 #include"pitches.h"
 
-
-
-int melody[] = {
-NOTE_C4,NOTE_DS3,NOTE_AS3,NOTE_G3,NOTE_F3
-
-
-};
-
-// note durations: 8 = quarter note, 4 = 8th note, etc.
-int noteDurations[] = {       //duration of the notes
-1,2
-};
-
-int speed=90;  //higher value, slower notes
-
-/*void loop() {
-// no need to repeat the melody.
-for (int thisNote = 0; melody[thisNote]!=-1; thisNote++) {
-
-int noteDuration = speed*noteDurations[thisNote];
-tone(3, melody[thisNote],noteDuration*.95);
-Serial.println(melody[thisNote]);
-
-delay(noteDuration);
-
-//noTone(3);
-}
-}*/
-//VAR DECLAIRED
-// wherever led output is seen change to speaker by reffering and combining the speaker code
+int melody = NOTE_C7;
+int noteDurations[] = { 2 , 6 };
+int speed=10;  //higher value, slower notes
 const int led = 13;
 const int buz = 3;
 String code = "";
 int len = 0;
 char ch;
 char new_char;
-int unit_delay = 200;
+int unit_delay = 100;
 void dot()
 {
   Serial.print(".");
@@ -44,7 +17,7 @@ void dot()
   
   delay(unit_delay);
   digitalWrite(led, LOW);
-  tone(3, melody[0],noteDurations[0]*200);
+  tone(3, melody,noteDurations[0]*speed);
   delay(unit_delay);
 }
 
@@ -53,10 +26,10 @@ void dash()
   Serial.print("-");
   digitalWrite(led, HIGH);
   digitalWrite(buz, HIGH);
-  delay(unit_delay * 3);
+  delay(unit_delay);
   digitalWrite(led, LOW);
 
-  tone(3, melody[1],noteDurations[1]*200);
+  tone(3, melody,noteDurations[1]*speed);
   delay(unit_delay);
 }
 //HOW EACH LETTER IS BUZZED
@@ -431,8 +404,6 @@ void nine()
   dot();
   delay(unit_delay);
 }
-
-
 
 void morse()
 {
